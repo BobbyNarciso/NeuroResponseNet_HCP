@@ -11,8 +11,6 @@ This project trains neural models (e.g., **LSTM** / liquid-like RNN variants) to
 - **Regress** behavioral/affect measures (e.g., `FearAffect_Unadj`)
 - **Interpret** results via ROI/network-level summaries (hemisphere + functional networks)
 
-> If your brain had a log file, this repo is a first pass at parsing it. (Respectfully. With science.)
-
 ---
 
 ## Highlights
