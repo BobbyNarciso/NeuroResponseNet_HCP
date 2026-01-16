@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual env
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (keep HCP and derived heavy artifacts out of git)
+data/
+*.h5
+*.hdf5
+*.nii
+*.nii.gz
+*.csv
+*.parquet
+
+# Logs / outputs
+runs/
+outputs/

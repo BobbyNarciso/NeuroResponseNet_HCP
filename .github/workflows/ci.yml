@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Import smoke test
+        run: |
+          python - <<'PY'
+          import numpy, pandas, sklearn
+          import matplotlib
+          print('Core imports OK')
+          try:
+              import torch
+              print('Torch OK:', torch.__version__)
+          except Exception as e:
+              print('Torch import failed:', e)
+          try:
+              import nilearn
+              print('Nilearn OK:', nilearn.__version__)
+          except Exception as e:
+              print('Nilearn import failed:', e)
+          PY
+
+      - name: Notebook presence check
+        run: |
+          test -f notebooks/Proyecto_HCP_IB.ipynb
+          echo "Notebook found."

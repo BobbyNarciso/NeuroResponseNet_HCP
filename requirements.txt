@@ -1,0 +1,18 @@
+# Core
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+scikit-learn
+
+# Neuro / graphs
+nilearn
+networkx
+python-louvain
+
+# Deep learning (pick one depending on your notebook)
+torch
+
+# Notebook
+jupyter
